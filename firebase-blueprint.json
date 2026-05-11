@@ -1,0 +1,43 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User registered for face recognition",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "descriptors": { "type": "array", "description": "Serialized face descriptors (Float32Array converted to array)" },
+        "imagePath": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "descriptors", "createdAt"]
+    },
+    "Attendance": {
+      "title": "Attendance",
+      "description": "Daily attendance logs",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "name": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "confidence": { "type": "number" },
+        "emotion": { "type": "string" }
+      },
+      "required": ["userId", "name", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Registered persons in the system"
+    },
+    "/attendance/{logId}": {
+      "schema": "Attendance",
+      "description": "Records of identified persons"
+    }
+  }
+}

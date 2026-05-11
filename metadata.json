@@ -1,0 +1,13 @@
+{
+  "name": "VisionSentinel AI",
+  "description": "Professional real-time face recognition and attendance system featuring deep learning CNN models, emotion detection, and secure cloud database integration.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "REAL_TIME_FACE_RECOGNITION",
+    "ATTENDANCE_TRACKING",
+    "EMOTION_ANALYSIS",
+    "ADMIN_DASHBOARD"
+  ]
+}
